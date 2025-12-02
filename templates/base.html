@@ -22,7 +22,7 @@
                     <form action="{% url "logout" %}" method="post">
                         {% csrf_token %}
                         <button type="submit" class="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">
-                            Cerrar sesión
+                            Logout
                         </button>
                     </form>
                     {% else %}
@@ -30,8 +30,11 @@
                             Login
                         </a>
                     {% endif %}
-                    <a href="#" class="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800">
-                        Mi Pedido
+                    <a 
+                        href="{% url "my_order" %}" 
+                        class="text-white bg-indigo-700 hover:bg-indigo-800 focus:ring-4 focus:ring-indigo-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-indigo-600 dark:hover:bg-indigo-700 focus:outline-none dark:focus:ring-indigo-800"
+                    >
+                        My Order
                     </a>
                 </div>
             </div>
@@ -40,6 +43,5 @@
     <div class="container mx-auto px-4 mt-8">
         {% block content %}{% endblock content %}
     </div>
-    
 </body>
 </html>
