@@ -4,7 +4,6 @@ from .forms import ProductForm
 from .models import Product
 
 
-# Create your views here.
 class ProductFormView(FormView):
     template_name = "products/add_product.html"
     form_class = ProductForm
@@ -13,6 +12,7 @@ class ProductFormView(FormView):
     def form_valid(self, form):
         form.save()
         return super().form_valid(form)
+
 
 class ProductListView(ListView):
     model = Product
